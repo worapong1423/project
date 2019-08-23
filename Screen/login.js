@@ -27,6 +27,3 @@ export default class FormExample extends Component {
     );
   }
 }
-
-
-
