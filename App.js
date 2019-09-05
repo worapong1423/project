@@ -1,32 +1,54 @@
 
 import React, { Component } from 'react';
-import { Image } from 'react-native';
-import { Container, Header, Content, Form, Item, Input,Button,Text } from 'native-base';
-export default class FormExample extends Component {
+import { Button,View,TextInput,Text } from 'react-native';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
+
+
+export default class App extends React.Component {
   render() {
-    let pic = {
-        uri: 'https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjQm4y44ZPkAhVbinAKHX2zDWsQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.lg.com%2Fth%2Fwashing-machine%2Flg-T2512VSAM&psig=AOvVaw3L_Y_5VP1lIlGOJoFH_6No&ust=1566469947807285'
-    };
+    return <AppContainer />;
+  }
+}
+
+ class Loginscreen extends React.Component {
+  static navigationOptions ={
+    title : 'Login'
+  };
+  render() {
     return (
-      <Container>
-        <Header />
-        <Content>
-    
-        <Item regular>
-            <Input placeholder='ชื่อผู้ใช้' />
-          </Item>
-          <Item regular>
-            <Input placeholder='รหัสผ่าน' />
-          </Item>
-          <Button  block  primary>
-            <Text>เข้าสู่ระบบ</Text>
-          
-          </Button>
-        </Content>
-      </Container>
+      <View style={{flex:1 , alignItems: 'center',justifycontent:'center'}}>
+        <Text>ชื่อผู้ใช้</Text><TextInput ></TextInput>
+        <Text>รหัสผ่าน</Text><TextInput></TextInput>
+        
+        <Button title="login" onPress={()=> this.props.navigation.navigate('Home')}></Button>
+      </View>
+    )
+  }
+}
+
+class Homescreen extends React.Component {
+  
+  render() {
+
+    return (
+      <View style={{flex:1 , alignItems: 'center',justifycontent:'center'}}>
+        <Text>โรงแรม</Text>
+      </View>
     );
   }
 }
 
 
+const AppNavigator = createStackNavigator(
+  {
+    Login :Loginscreen,
+    Home :Homescreen,
+},
+{
+  initialRouteName:'Login',
+}
+);
 
+
+
+const AppContainer = createAppContainer(AppNavigator);
