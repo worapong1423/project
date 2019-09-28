@@ -1,15 +1,20 @@
 import React, { Component } from 'react'
 import { Text, View } from 'react-native'
+import { createStackNavigator, createAppContainer } from 'react-navigation';
+import ProfileScreen from './Screen/ProfileScreen';
 
-export class HomeScreen extends Component {
-    render() {
-        return (
-            <View>
-                <Text> textInComponent </Text>
-            </View>
-        )
-    }
+class HomeScreen extends React.Component { {
+
+  render() {
+
+    return (
+      <View style={{flex:1 , alignItems: 'center',justifycontent:'center'}}>
+        <Text>โรงแรม</Text>
+
+        <Button title="Home" onPress={()=> this.props.navigation.navigate('Profile')}></Button>
+      </View>
+    );
+  }
 }
-
-export default HomeScreen
+export default ProfileScreen;
 

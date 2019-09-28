@@ -1,7 +1,11 @@
-
 import React, { Component } from 'react';
-import { Button,View,TextInput,Text } from 'react-native';
-import { createStackNavigator, createAppContainer } from 'react-navigation';
+import {Container,Header,Content,Item,Button,Input,Text} from "native-base";
+import { createStackNavigator, createAppContainer} from 'react-navigation';
+import HotelScreen from './Screen/HotelScreen';
+import ProfileScreen from './Screen/ProfileScreen';
+import LoginScreen from './Screen/LoginScreen';
+import AddHotel from './Screen/AddHotel';
+import AddHotelTwo from './Screen/AddHotelTwo';
 
 
 export default class App extends React.Component {
@@ -9,46 +13,27 @@ export default class App extends React.Component {
     return <AppContainer />;
   }
 }
-
- class Loginscreen extends React.Component {
-  static navigationOptions ={
-    title : 'Login'
-  };
-  render() {
-    return (
-      <View style={{flex:1 , alignItems: 'center',justifycontent:'center'}}>
-        <Text>ชื่อผู้ใช้</Text><TextInput ></TextInput>
-        <Text>รหัสผ่าน</Text><TextInput></TextInput>
-        
-        <Button title="login" onPress={()=> this.props.navigation.navigate('Home')}></Button>
-      </View>
-    )
-  }
-}
-
-class Homescreen extends React.Component {
-  
-  render() {
-
-    return (
-      <View style={{flex:1 , alignItems: 'center',justifycontent:'center'}}>
-        <Text>โรงแรม</Text>
-      </View>
-    );
-  }
-}
-
-
 const AppNavigator = createStackNavigator(
   {
-    Login :Loginscreen,
-    Home :Homescreen,
+    Login : LoginScreen,
+    Home : HotelScreen,
+    Profile : ProfileScreen,
+    addHotel : AddHotel,
+    addHotel2 : AddHotelTwo,
 },
 {
   initialRouteName:'Login',
+  defaultNavigationOptions: {
+    headerStyle: {
+      backgroundColor: '#3F51B5',
+    },
+    headerTintColor: '#fff',
+    headerTitleStyle: {
+      fontWeight: 'bold',
+    },
+  }
 }
 );
-
-
-
 const AppContainer = createAppContainer(AppNavigator);
+
+
