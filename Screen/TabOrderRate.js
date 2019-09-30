@@ -3,23 +3,24 @@ import { StyleSheet,View} from 'react-native'
 import {Header,Title,Content,Button,Icon,Left,Right,Body,Text} from "native-base";
 import { Table, TableWrapper, Row,Rows } from 'react-native-table-component';
 
-export default class AddHotelTwo extends Component {
+
+export default class TabOrderRate extends Component {
   constructor(props) {
     super(props);
     this.state = {
       tableHead : ['รายการ', 'บาท/ชิ้น'],
       tableData : [
-                      ['ผ้าปูที่นอน 3.5 ฟุต', ' '],
-                      ['ผ้าปูที่นอน 5-6 ฟุต', ' '],
-                      ['ปลอกหมอน', ' '],
-                      ['ปลอกผ้านวม เล็ก', ' '],
-                      ['ปลอกผ้าหนวมใหญ่', ' '],
-                      ['ผ้าเช็ดตัว', ' '],
-                      ['ผ้าเช็ตหน้า', ' '],
-                      ['ผ้าเช็ดมือ', ' '],
-                      ['ผ้าเช็ตเท้า', ' '],
-                      ['เสื้อคลุม', ' '],
-                      ['รองเท้า', ' '],
+                      ['ผ้าปูที่นอน 3.5 ฟุต', '3'],
+                      ['ผ้าปูที่นอน 5-6 ฟุต', '4'],
+                      ['ปลอกหมอน', '1'],
+                      ['ปลอกผ้านวม เล็ก', '4'],
+                      ['ปลอกผ้าหนวมใหญ่', '3'],
+                      ['ผ้าเช็ดตัว', '5'],
+                      ['ผ้าเช็ตหน้า', '6'],
+                      ['ผ้าเช็ดมือ', '7'],
+                      ['ผ้าเช็ตเท้า', '2'],
+                      ['เสื้อคลุม', '1'],
+                      ['รองเท้า', '1'],
       ]
     }
   }
@@ -35,8 +36,6 @@ export default class AddHotelTwo extends Component {
           <Row data={state.tableHead} style={styles.head} textStyle={styles.text}/>
           <Rows data={state.tableData} textStyle={styles.text}/>
         </Table>
-        <Button block onPress={()=> this.props.navigation.replace('Home')}>
-                <Text>บันทึก</Text></Button>
       </View>
 
     )

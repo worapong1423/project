@@ -3,14 +3,10 @@ import { StyleSheet } from 'react-native'
 import {Container,Header,Title,Content,Button,Icon,List,ListItem,Text,Left,Right,Body,View,Fab,IconNB} from "native-base";
 
 const datas = [
-  "Simon Mignolet",
-  "Nathaniel Clyne",
-  "Dejan Lovren",
-  "Mama Sakho",
-  "Alberto Moreno",
-  "Emre Can",
-  "Joe Allen",
-  "Phil Coutinho"
+  "โรงเเรม อินเตอร์เนชั่นแนลเฮาล์",
+  "โรงเเรม วีพี",
+  "โรงเเรม เอ็มพลัส",
+  "โรงเเรม Zen Hostel",
 ];
 
 class HotelScreen extends Component {
@@ -38,7 +34,7 @@ class HotelScreen extends Component {
                   <Text>{data}</Text>
                 </Left>
                 <Right>
-                  <Icon name="arrow-forward" onPress={()=> this.props.navigation.navigate('Profile')}/>
+                  <Icon name="arrow-forward" onPress={()=> this.props.navigation.navigate('Order')}/>
                 </Right>
               </ListItem>
             ))}
