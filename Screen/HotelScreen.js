@@ -27,14 +27,14 @@ class HotelScreen extends Component {
       <Container style={styles.container}>
 
         <Content>
-          <List>
+          <List >
             {datas.map((data, i) => (
-              <ListItem>
+              <ListItem onPress={()=> this.props.navigation.navigate('Order')} >
                 <Left>
                   <Text>{data}</Text>
                 </Left>
                 <Right>
-                  <Icon name="arrow-forward" onPress={()=> this.props.navigation.navigate('Order')}/>
+                  <Icon name="arrow-forward" />
                 </Right>
               </ListItem>
             ))}
@@ -50,7 +50,7 @@ class HotelScreen extends Component {
             position="bottomRight" onPress={() => this.props.navigation.navigate('addHotel')}
 
           >
-            <IconNB name="md-share" />
+            <IconNB name="md-add" />
             <Button style={{ backgroundColor: "#34A34F" }}>
               <IconNB name="logo-whatsapp" />
             </Button>

@@ -5,7 +5,6 @@ import HotelScreen from './Screen/HotelScreen';
 import ProfileScreen from './Screen/ProfileScreen';
 import LoginScreen from './Screen/LoginScreen';
 import AddHotel from './Screen/AddHotel';
-import AddHotelTwo from './Screen/AddHotelTwo';
 import Order from './Screen/Order';
 
 
@@ -21,7 +20,6 @@ const AppNavigator = createStackNavigator(
     Home : HotelScreen,
     Profile : ProfileScreen,
     addHotel : AddHotel,
-    addHotel2 : AddHotelTwo,
     Order : Order,
 },
 {

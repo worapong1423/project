@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import { Text, View } from 'react-native'
 import { createStackNavigator, createAppContainer } from 'react-navigation';
-import ProfileScreen from './Screen/ProfileScreen';
 
-class HomeScreen extends React.Component { {
+class HomeScreen extends React.Component {
 
   render() {
 
@@ -16,5 +15,5 @@ class HomeScreen extends React.Component { {
     );
   }
 }
-export default ProfileScreen;
+export default HomeScreen;
 

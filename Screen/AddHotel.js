@@ -39,8 +39,8 @@ class AddHotel extends Component {
             <Item rounded>
                 <Input placeholder="เลขประจำตัวผู้เสียภาษี" />
             </Item>
-            <Button block onPress={()=> this.props.navigation.replace('addHotel2')}>
-                <Text>ขั่นตอนต่อไป</Text></Button>
+            <Button block onPress={()=> this.props.navigation.replace('Order')}>
+                <Text>บันทึก</Text></Button>
           </Form>
         </Content>
       </Container>

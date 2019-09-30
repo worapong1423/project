@@ -1,16 +1,33 @@
 import React, { Component } from "react";
 import { StyleSheet } from 'react-native'
-import {Container,Header,Title,Content,Button,Icon,List,ListItem,Text,Thumbnail,Left,Right,Body} from "native-base";
+import {Container,Header,Title,Content,Button,Icon,List,ListItem,Text,Left,Right,Body,View,Fab,IconNB} from "native-base";
 
 const datas = [
   {
-    text: "HT0004",
+    text: "HT0001",
     status: "สถานะ : เสร็จสิ้น",
-    date : "02/02/2562"
+    date : "01/02/2562"
+  },
+  {
+    text: "HT0002",
+    status: "สถานะ : ส่งคืนออเดอร์",
+    date : "03/02/2562"
+  },
+  {
+    text: "HT0003",
+    status: "สถานะ : กำลังดำเนินการ",
+    date : "03/02/2562"
   },
 ];
 
 class TabOrderList extends Component {
+
+  constructor(props) {
+      super(props);
+      this.state = {
+        active: false
+      };
+  }
   render() {
     return (
       <Container style={styles.container}>
@@ -18,25 +35,45 @@ class TabOrderList extends Component {
         <Content>
           <List>
             {datas.map((data, i) => (
-              <ListItem avatar>
+              <ListItem>
                 <Left>
                   <Text>{data.text}</Text>
-                  <Text numberOfLines={1} note>
-                  </Text>
                 </Left>
 
-                <Body></Body>
-
-                <Right>
+                <Body>
                   <Text numberOfLines={1} note>
                     {data.date}
                   </Text>
                   <Text note>{data.status}</Text>
-                </Right>
+                </Body>
+
               </ListItem>
             ))}
           </List>
         </Content>
+
+        <View style={{ flex: 1 }}>
+          <Fab
+            active={this.state.active}
+            direction="up"
+            containerStyle={{}}
+            style={{ backgroundColor: "#5067FF" }}
+            position="bottomRight" onPress={() => this.props.navigation.navigate('')}
+
+          >
+            <IconNB name="md-add" />
+            <Button style={{ backgroundColor: "#34A34F" }}>
+              <IconNB name="logo-whatsapp" />
+            </Button>
+            <Button style={{ backgroundColor: "#3B5998" }}>
+              <IconNB name="logo-facebook" />
+            </Button>
+            <Button disabled style={{ backgroundColor: "#DD5144" }}>
+              <IconNB name="ios-mail" />
+            </Button>
+          </Fab>
+        </View>
+
       </Container>
     );
   }

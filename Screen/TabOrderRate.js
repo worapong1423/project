@@ -1,49 +1,85 @@
 import React, { Component } from "react";
-import { StyleSheet,View} from 'react-native'
-import {Header,Title,Content,Button,Icon,Left,Right,Body,Text} from "native-base";
-import { Table, TableWrapper, Row,Rows } from 'react-native-table-component';
+import { StyleSheet } from 'react-native'
+import {Container,Header,Title,Content,Button,Icon,List,ListItem,Text,Left,Right,Body,View,Fab,IconNB} from "native-base";
 
+const datas = [
+  {
+    list: "ผ้าปูที่นอน 3.5 ฟุต",
+    rate: "10",
+  },
+  {
+    list: "ผ้าปูที่นอน 5-6 ฟุต",
+    rate: "12",
+  },
+  {
+    list: "ปลอกหมอน",
+    rate: "5",
+  },
+  {
+    list: "ปลอกผ้านวม เล็ก",
+    rate: "25",
+  },
+];
 
-export default class TabOrderRate extends Component {
+class TabOrderRate extends Component {
+
   constructor(props) {
-    super(props);
-    this.state = {
-      tableHead : ['รายการ', 'บาท/ชิ้น'],
-      tableData : [
-                      ['ผ้าปูที่นอน 3.5 ฟุต', '3'],
-                      ['ผ้าปูที่นอน 5-6 ฟุต', '4'],
-                      ['ปลอกหมอน', '1'],
-                      ['ปลอกผ้านวม เล็ก', '4'],
-                      ['ปลอกผ้าหนวมใหญ่', '3'],
-                      ['ผ้าเช็ดตัว', '5'],
-                      ['ผ้าเช็ตหน้า', '6'],
-                      ['ผ้าเช็ดมือ', '7'],
-                      ['ผ้าเช็ตเท้า', '2'],
-                      ['เสื้อคลุม', '1'],
-                      ['รองเท้า', '1'],
-      ]
-    }
+      super(props);
+      this.state = {
+        active: false
+      };
   }
-  static navigationOptions = ({navigation})=>{
-      let headerTitle = 'เพิ่มโรงแรม';
-      return {headerTitle}
-  };
-  render() {
-    const state = this.state;
-    return (
-      <View style={styles.container}>
-        <Table borderStyle={{borderWidth: 2, borderColor: '#c8e1ff'}}>
-          <Row data={state.tableHead} style={styles.head} textStyle={styles.text}/>
-          <Rows data={state.tableData} textStyle={styles.text}/>
-        </Table>
-      </View>
 
-    )
+  render() {
+    return (
+      <Container style={styles.container}>
+
+        <Content>
+          <List>
+            {datas.map((data, i) => (
+              <ListItem>
+                <Left>
+                  <Text>{data.list} เรท : {data.rate}</Text>
+                </Left>
+                <Right>
+                  <Text onPress={()=> this.props.navigation.navigate(' ')}> แก้ไข </Text>
+                </Right>
+              </ListItem>
+            ))}
+          </List>
+        </Content>
+
+        <View style={{ flex: 1 }}>
+          <Fab
+            active={this.state.active}
+            direction="up"
+            containerStyle={{}}
+            style={{ backgroundColor: "#5067FF" }}
+            position="bottomRight" onPress={() => this.props.navigation.navigate('')}
+
+          >
+            <IconNB name="md-add" />
+            <Button style={{ backgroundColor: "#34A34F" }}>
+              <IconNB name="logo-whatsapp" />
+            </Button>
+            <Button style={{ backgroundColor: "#3B5998" }}>
+              <IconNB name="logo-facebook" />
+            </Button>
+            <Button disabled style={{ backgroundColor: "#DD5144" }}>
+              <IconNB name="ios-mail" />
+            </Button>
+          </Fab>
+        </View>
+
+      </Container>
+    );
   }
 }
 
-  const styles = StyleSheet.create({
-    container: { flex: 1, padding: 16, paddingTop: 30, backgroundColor: '#fff' },
-    head: { height: 40, backgroundColor: '#f1f8ff' },
-    text: { margin: 10 }
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#FFF"
+  },
 });
+
+export default TabOrderRate;
