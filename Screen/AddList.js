@@ -3,7 +3,7 @@ import { Text, View } from 'react-native'
 import {createStackNavigator, createAppContainer} from 'react-navigation';
 
 
-export class EditRate extends React.Component {
+export class OrderAdd extends React.Component {
     render() {
         return (
             <View>
@@ -12,4 +12,4 @@ export class EditRate extends React.Component {
         )
     }
 }
-export default EditRate ;
+export default OrderAdd;
