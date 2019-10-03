@@ -6,7 +6,8 @@ import ProfileScreen from './Screen/ProfileScreen';
 import LoginScreen from './Screen/LoginScreen';
 import AddHotel from './Screen/AddHotel';
 import Order from './Screen/Order';
-
+import EditedRate from './Screen/EditedRate';
+import AddList from './Screen/AddList';
 
 
 export default class App extends React.Component {
@@ -21,6 +22,8 @@ const AppNavigator = createStackNavigator(
     Profile : ProfileScreen,
     addHotel : AddHotel,
     Order : Order,
+    EditedRate  : EditedRate ,
+    AddList  : AddList ,
 },
 {
   initialRouteName:'Login',

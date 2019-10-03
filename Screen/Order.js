@@ -3,7 +3,6 @@ import {Container,Header,Title,Button,Icon,Tabs,Tab,Right,Left,Body} from "nativ
 import TabOrderList from './TabOrderList';
 import TabOrderRate from './TabOrderRate';
 import TabOrderDetail from './TabOrderDetail';
-import EditRate from './EditRate';
 
 export default class Order extends Component {
 

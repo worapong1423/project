@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { StyleSheet } from 'react-native'
 import {Container,Header,Title,Content,Button,Icon,List,ListItem,Text,Left,Right,Body,View,Fab,IconNB} from "native-base";
 
+
 const datas = [
   {
     text: "HT0001",
@@ -54,23 +55,10 @@ class TabOrderList extends Component {
 
         <View style={{ flex: 1 }}>
           <Fab
-            active={this.state.active}
-            direction="up"
-            containerStyle={{}}
             style={{ backgroundColor: "#5067FF" }}
-            position="bottomRight" onPress={() => this.props.navigation.navigate('')}
-
+            position="bottomRight" onPress={() => this.props.navigation.setParams('OrderAdd')}
           >
             <IconNB name="md-add" />
-            <Button style={{ backgroundColor: "#34A34F" }}>
-              <IconNB name="logo-whatsapp" />
-            </Button>
-            <Button style={{ backgroundColor: "#3B5998" }}>
-              <IconNB name="logo-facebook" />
-            </Button>
-            <Button disabled style={{ backgroundColor: "#DD5144" }}>
-              <IconNB name="ios-mail" />
-            </Button>
           </Fab>
         </View>
 
@@ -86,3 +74,4 @@ const styles = StyleSheet.create({
 });
 
 export default TabOrderList;
+

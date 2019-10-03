@@ -3,10 +3,10 @@ import { StyleSheet } from 'react-native'
 import {Container,Header,Title,Content,Button,Icon,List,ListItem,Text,Left,Right,Body,View,Fab,IconNB} from "native-base";
 
 const datas = [
-  {
-    list: "ผ้าปูที่นอน 3.5 ฟุต",
-    rate: "10",
-  },
+      {
+        list: "ผ้าปูที่นอน 3.5 ฟุต",
+        rate: "10",
+      },
   {
     list: "ผ้าปูที่นอน 5-6 ฟุต",
     rate: "12",
@@ -42,7 +42,7 @@ class TabOrderRate extends Component {
                   <Text>{data.list} เรท : {data.rate}</Text>
                 </Left>
                 <Right>
-                  <Text onPress={()=> this.props.navigation.navigate(' ')}> แก้ไข </Text>
+                  <Text onPress={()=> this.props.navigation.navigate('EditedRate ')}> แก้ไข </Text>
                 </Right>
               </ListItem>
             ))}
