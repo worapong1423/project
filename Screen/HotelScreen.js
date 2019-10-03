@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
 import {Container,Header,Title,Content,Button,Icon,List,ListItem,Text,Left,Right,Body,View,Fab,IconNB} from "native-base";
 
 const datas = [
@@ -39,6 +40,9 @@ class HotelScreen extends Component {
               </ListItem>
             ))}
           </List>
+          <Button onPress={this._logout} title="Logout">
+            <Text>logout</Text>
+          </Button>
         </Content>
 
         <View style={{ flex: 1 }}>
@@ -57,6 +61,10 @@ class HotelScreen extends Component {
       </Container>
     );
   }
+   _logout = async() =>{
+     await AsyncStorage.clear();
+     this.props.navigation.navigate('Auth');
+   }
 }
 
 const styles = StyleSheet.create({
