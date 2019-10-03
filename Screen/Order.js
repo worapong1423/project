@@ -1,9 +1,10 @@
 import React, { Component } from "react";
+import { StyleSheet } from 'react-native';
 import {Container,Header,Title,Button,Icon,Tabs,Tab,Right,Left,Body} from "native-base";
 import TabOrderList from './TabOrderList';
 import TabOrderRate from './TabOrderRate';
 import TabOrderDetail from './TabOrderDetail';
-import { StyleSheet } from 'react-native';
+import AddListScreen from './AddListScreen';
 import { createDrawerNavigator } from 'react-navigation-drawer';
 
 export default class Order extends Component {

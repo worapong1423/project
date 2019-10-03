@@ -21,17 +21,23 @@ import AddListScreen from './Screen/AddListScreen';
 
 
 const AppStack = createStackNavigator({
+    Home : HotelScreen,
     AddList : AddListScreen,
-    });
+    addHotel : AddHotel,
+    EditedRate  : EditedRate ,
+    },{initialRouteName:'Home',
+    }
+
+    );
 
 const AppDrawer = createDrawerNavigator(
   {
     //Login : LoginScreen,
     Home : HotelScreen,
     Profile : ProfileScreen,
-    addHotel : AddHotel,
+
     Order : Order,
-    EditedRate  : EditedRate ,
+
 
 },
 {

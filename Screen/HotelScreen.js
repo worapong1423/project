@@ -12,6 +12,7 @@ const datas = [
 
 class HotelScreen extends Component {
    static navigationOptions = {
+      //title :'โรวแรม',
       drawerLabel: 'Home',
       /*drawerIcon: ({ tintColor }) => (
         <Image
