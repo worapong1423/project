@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { StyleSheet } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 import {Container,Header,Title,Content,Button,Icon,List,ListItem,Text,Left,Right,Body,View,Fab,IconNB} from "native-base";
-
+import { createDrawerNavigator } from 'react-navigation-drawer';
 const datas = [
   "โรงเเรม อินเตอร์เนชั่นแนลเฮาล์",
   "โรงเเรม วีพี",
@@ -11,10 +11,15 @@ const datas = [
 ];
 
 class HotelScreen extends Component {
-
-  static navigationOptions = {
-    title: 'โรงแรม',
-  };
+   static navigationOptions = {
+      drawerLabel: 'Home',
+      /*drawerIcon: ({ tintColor }) => (
+        <Image
+          source={require('./chats-icon.png')}
+          style={[styles.icon, { tintColor: tintColor }]}
+        />
+      ),*/
+    };
 
   constructor(props) {
     super(props);
@@ -43,6 +48,8 @@ class HotelScreen extends Component {
           <Button onPress={this._logout} title="Logout">
             <Text>logout</Text>
           </Button>
+          <Button title="open drawer" onPress={() =>this.props.navigation.toggleDrawer()} >
+                    </Button>
         </Content>
 
         <View style={{ flex: 1 }}>
@@ -51,8 +58,7 @@ class HotelScreen extends Component {
             direction="up"
             containerStyle={{}}
             style={{ backgroundColor: "#5067FF" }}
-            position="bottomRight" onPress={() => this.props.navigation.navigate('addHotel')}
-
+            position="bottomRight" onPress={()=> this.props.navigation.navigate('addHotel')}
           >
             <IconNB name="md-add" />
           </Fab>
@@ -71,6 +77,10 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "#FFF"
   },
+  icon: {
+      width: 24,
+      height: 24,
+    },
 });
 
 

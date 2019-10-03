@@ -7,18 +7,24 @@ import {
        } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 import {Container,Header,Content,Item,Button,Input,Text} from "native-base";
-import { createStackNavigator, createAppContainer,createSwitchNavigator} from 'react-navigation';
+import {  createAppContainer,createSwitchNavigator,} from 'react-navigation';
+import { createDrawerNavigator } from 'react-navigation-drawer';
+import { createStackNavigator } from 'react-navigation-stack';
 import HotelScreen from './Screen/HotelScreen';
 import ProfileScreen from './Screen/ProfileScreen';
 import LoginScreen from './Screen/LoginScreen';
 import AddHotel from './Screen/AddHotel';
 import Order from './Screen/Order';
 import EditedRate from './Screen/EditedRate';
-import AddList from './Screen/AddList';
+import TabOrderList from'./Screen/TabOrderList';
+import AddListScreen from './Screen/AddListScreen';
 
 
+const AppStack = createStackNavigator({
+    AddList : AddListScreen,
+    });
 
-const AppStack = createStackNavigator(
+const AppDrawer = createDrawerNavigator(
   {
     //Login : LoginScreen,
     Home : HotelScreen,
@@ -26,10 +32,10 @@ const AppStack = createStackNavigator(
     addHotel : AddHotel,
     Order : Order,
     EditedRate  : EditedRate ,
-    AddList  : AddList ,
+
 },
 {
-  //initialRouteName:'Login',
+  //initialRouteName:'Home',
   defaultNavigationOptions: {
     headerStyle: {
       backgroundColor: '#3F51B5',
@@ -87,8 +93,9 @@ export default createAppContainer(
   createSwitchNavigator(
     {
       AuthLoading: AuthLoadingScreen,
-      App: AppStack,
+      App: AppDrawer,
       Auth: AuthStack,
+      Stack: AppStack
     },
     {
       initialRouteName: 'AuthLoading',

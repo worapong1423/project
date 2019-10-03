@@ -3,12 +3,20 @@ import {Container,Header,Title,Button,Icon,Tabs,Tab,Right,Left,Body} from "nativ
 import TabOrderList from './TabOrderList';
 import TabOrderRate from './TabOrderRate';
 import TabOrderDetail from './TabOrderDetail';
+import { StyleSheet } from 'react-native';
+import { createDrawerNavigator } from 'react-navigation-drawer';
 
 export default class Order extends Component {
+   static navigationOptions = {
+      drawerLabel: 'Order',
+      /*drawerIcon: ({ tintColor }) => (
+        <Image
+          source={require('./chats-icon.png')}
+          style={[styles.icon, { tintColor: tintColor }]}
+        />
+      ),*/
+    };
 
-  static navigationOptions = {
-    title: 'โรงแรม',
-  };
 
   render() {
     return (
@@ -28,3 +36,13 @@ export default class Order extends Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#FFF"
+  },
+  icon: {
+      width: 24,
+      height: 24,
+    },
+});
