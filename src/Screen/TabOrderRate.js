@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { StyleSheet } from 'react-native'
-import {Container,Header,Title,Content,Button,Icon,List,ListItem,Text,Left,Right,Body,View,Fab,IconNB} from "native-base";
+import {Container,Header,Title,Content,Button,Icon,List,ListItem,Text,Left,Right,Body,View,Fab,IconNB,Footer,FooterTab} from "native-base";
 
 const datas = [
       {

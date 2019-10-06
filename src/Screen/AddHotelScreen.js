@@ -42,6 +42,7 @@ class AddHotelScreen extends Component {
             <Button block onPress={()=> this.props.navigation.navigate('Home')}>
                 <Text>บันทึก</Text></Button>
           </Form>
+
         </Content>
       </Container>
     );

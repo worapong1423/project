@@ -1,13 +1,20 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image,Button } from 'react-native';
 import Signature from 'react-native-signature-canvas';
  
 export default class SignatureScreen extends React.Component {
 
-  static navigationOptions = ({navigation})=>{
-      let headerTitle = 'รับออเดอร์';
-      return {headerTitle}
-   };
+  static navigationOptions = ({ navigation }) => {
+        return {
+          headerTitle : 'รับออเดอร์',
+          headerRight : (
+            <Button title="บันทึก"
+              onPress={()=> this.props.navigation.navigate('Home')}
+              color="#3F51B5"
+            />
+          ),
+        };
+      };
 
   constructor(props) {
     super(props);

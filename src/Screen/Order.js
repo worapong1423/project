@@ -10,6 +10,7 @@ import { createDrawerNavigator } from 'react-navigation-drawer';
 export default class Order extends Component {
    static navigationOptions = {
       drawerLabel: 'Order',
+
       /*drawerIcon: ({ tintColor }) => (
         <Image
           source={require('./chats-icon.png')}

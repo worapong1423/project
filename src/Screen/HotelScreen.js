@@ -18,6 +18,7 @@ import {
   Fab,
   IconNB
 } from "native-base";
+import {  createAppContainer,createSwitchNavigator,} from 'react-navigation';
 import { createDrawerNavigator } from "react-navigation-drawer";
 const datas = [
   "โรงเเรม อินเตอร์เนชั่นแนลเฮาล์",
@@ -27,16 +28,16 @@ const datas = [
 ];
 
 class HotelScreen extends Component {
-      static navigationOptions = {
-         headerTitle: 'โรงแรม',
-         headerLeft: (
-           <Button  onPress={() =>this.props.navigation.dispatch(DrawerActions.openDrawer())}>
-               <Text>Drawer</Text>
-           </Button>
-         ),
-         drawerLabel: 'โรงแรม'
+  /*static navigationOptions = {
+    headerTitle: 'โรงแรม',
+    headerLeft: (
+      <Button  onPress={() =>this.props.navigation.dispatch(DrawerActions.openDrawer())}>
+        <Text>Drawer</Text>
+      </Button>
+    ),
+    drawerLabel: 'โรงแรม'
 
-         /*headerLeft: (
+         headerLeft: (
          <Image style={{ width: 28, height: 28, marginLeft: 5 }} source={require('../Image/drawer.png')} onPress={() =>this.props.navigation.dispatch(DrawerActions.openDrawer())}/>
          ),*/
          /*drawerLabel: 'โรงแรม',
@@ -45,8 +46,8 @@ class HotelScreen extends Component {
              source={require('./chats-icon.png')}
              style={[styles.icon, { tintColor: tintColor }]}
            />
-         ),*/
-       };
+         ),
+       };*/
 
 
   constructor(props) {
@@ -72,13 +73,14 @@ class HotelScreen extends Component {
               </ListItem>
             ))}
           </List>
-          <Button onPress={this._logout} title="Logout">
+	      <Button onPress={this._logout} title="Logout">
             <Text>logout</Text>
           </Button>
+
           <Button
             title="open drawer"
             onPress={() => this.props.navigation.toggleDrawer()}
-          ></Button>
+          ><Text>Drawer</Text></Button>
           <Button
             title="Signature"
             onPress={() => this.props.navigation.navigate('Signature')}

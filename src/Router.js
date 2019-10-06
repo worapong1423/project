@@ -25,20 +25,21 @@ import AuthLoadingScreen from './Screen/AuthLoadingScreen'
 
 const AppStack = createStackNavigator({
     Home : HotelScreen,
-    AddList : AddListScreen,
-    EditedRate  : EditedRate ,
-    Order : Order,
-    Profile : ProfileScreen,
     AddHotelScreen : AddHotelScreen,
-    EditedRate  : EditedRate ,
+    Order : Order,
+    AddList : AddListScreen,
     Signature : SignatureScreen,
+    EditedRate  : EditedRate ,
+    Profile : ProfileScreen,
+    EditedRate  : EditedRate ,
+
     },
     {initialRouteName:'Home',
     },
     {
     defaultNavigationOptions: {
         headerStyle: {
-        backgroundColor: '#3F51B5',
+            backgroundColor: '#3F51B5',
      },
         headerTintColor: '#fff',
         headerTitleStyle: {
@@ -47,6 +48,7 @@ const AppStack = createStackNavigator({
    }
  }
  );
+const AuthStack = createStackNavigator({Login : LoginScreen});
 
 const AppDrawer = createDrawerNavigator(
   {
@@ -70,7 +72,6 @@ const AppDrawer = createDrawerNavigator(
 );
 const MyApp = createAppContainer(AppDrawer);
 
-const AuthStack = createStackNavigator({Login : LoginScreen});
 
 export default createAppContainer(
     createSwitchNavigator(
