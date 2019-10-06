@@ -31,6 +31,7 @@ const AppStack = createStackNavigator({
     Profile : ProfileScreen,
     AddHotelScreen : AddHotelScreen,
     EditedRate  : EditedRate ,
+    Signature : SignatureScreen,
     },
     {initialRouteName:'Home',
     },
@@ -52,6 +53,7 @@ const AppDrawer = createDrawerNavigator(
     //Login : LoginScreen,
     Home : HotelScreen,
     EditedRate  : EditedRate ,
+    AddList : AddListScreen,
    },
 {
   //initialRouteName:'Home',

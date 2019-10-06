@@ -51,7 +51,7 @@ class TabOrderRate extends Component {
 
         <Footer>
             <FooterTab>
-                <Button full onPress={() => this.props.navigation.setParams('AddList') }>
+                <Button full onPress={() => this.props.navigation.setParams('EditedRate') }>
                     <Text>เพิ่มรายการ</Text>
                 </Button>
             </FooterTab>
