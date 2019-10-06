@@ -34,7 +34,7 @@ const data = [
 
 export class AddListScreen extends React.Component {
     static navigationOptions = ({navigation})=> {
-        let headerTitle = 'เพิ่มออเดอร์';
+        let headerTitle = 'รับออเดอร์';
         return {headerTitle}
         };
     render() {
@@ -68,8 +68,8 @@ export class AddListScreen extends React.Component {
                       </Body>
                     </CardItem>
                     <CardItem footer>
-                      <Button title="ขั้นตอนต่อไป" onPress={() => this.props.navigation.navigate('Signature')}>
-                        <Text>Signature</Text>
+                      <Button onPress={() => this.props.navigation.navigate('Signature')}>
+                        <Text>ขั้นตอนต่อไป</Text>
                       </Button>
                     </CardItem>
                 </Card>

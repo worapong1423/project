@@ -3,6 +3,12 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 import Signature from 'react-native-signature-canvas';
  
 export default class SignatureScreen extends React.Component {
+
+  static navigationOptions = ({navigation})=>{
+      let headerTitle = 'รับออเดอร์';
+      return {headerTitle}
+   };
+
   constructor(props) {
     super(props);
     this.state = { signature: null };

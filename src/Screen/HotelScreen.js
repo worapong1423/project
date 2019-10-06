@@ -34,6 +34,7 @@ class HotelScreen extends Component {
                <Text>Drawer</Text>
            </Button>
          ),
+         drawerLabel: 'โรงแรม'
 
          /*headerLeft: (
          <Image style={{ width: 28, height: 28, marginLeft: 5 }} source={require('../Image/drawer.png')} onPress={() =>this.props.navigation.dispatch(DrawerActions.openDrawer())}/>
