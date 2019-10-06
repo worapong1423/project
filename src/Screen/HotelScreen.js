@@ -1,26 +1,42 @@
 import React, { Component } from "react";
-import { StyleSheet } from 'react-native';
-import AsyncStorage from '@react-native-community/async-storage';
-import {Container,Header,Title,Content,Button,Icon,List,ListItem,Text,Left,Right,Body,View,Fab,IconNB} from "native-base";
-import { createDrawerNavigator } from 'react-navigation-drawer';
+import { StyleSheet } from "react-native";
+import AsyncStorage from "@react-native-community/async-storage";
+import {
+  Container,
+  Header,
+  Title,
+  Content,
+  Button,
+  Icon,
+  List,
+  ListItem,
+  Text,
+  Left,
+  Right,
+  Body,
+  View,
+  Fab,
+  IconNB
+} from "native-base";
+import { createDrawerNavigator } from "react-navigation-drawer";
 const datas = [
   "โรงเเรม อินเตอร์เนชั่นแนลเฮาล์",
   "โรงเเรม วีพี",
   "โรงเเรม เอ็มพลัส",
-  "โรงเเรม Zen Hostel",
+  "โรงเเรม Zen Hostel"
 ];
 
 class HotelScreen extends Component {
-   static navigationOptions = {
-      //title :'โรงแรม',
-      drawerLabel: 'Home',
-      /*drawerIcon: ({ tintColor }) => (
+  static navigationOptions = {
+    //title :'โรงแรม',
+    drawerLabel: "Home"
+    /*drawerIcon: ({ tintColor }) => (
         <Image
           source={require('./chats-icon.png')}
           style={[styles.icon, { tintColor: tintColor }]}
         />
       ),*/
-    };
+  };
 
   constructor(props) {
     super(props);
@@ -32,11 +48,10 @@ class HotelScreen extends Component {
   render() {
     return (
       <Container style={styles.container}>
-
         <Content>
-          <List >
+          <List>
             {datas.map((data, i) => (
-              <ListItem onPress={()=> this.props.navigation.navigate('Order')} >
+              <ListItem onPress={() => this.props.navigation.navigate("Order")}>
                 <Left>
                   <Text>{data}</Text>
                 </Left>
@@ -49,8 +64,14 @@ class HotelScreen extends Component {
           <Button onPress={this._logout} title="Logout">
             <Text>logout</Text>
           </Button>
-          <Button title="open drawer" onPress={() =>this.props.navigation.toggleDrawer()} >
-                    </Button>
+          <Button
+            title="open drawer"
+            onPress={() => this.props.navigation.toggleDrawer()}
+          ></Button>
+          <Button
+            title="Signature"
+            onPress={() => this.props.navigation.navigate('Signature')}
+          ><Text>Signature</Text></Button>
         </Content>
 
         <View style={{ flex: 1 }}>
@@ -59,19 +80,19 @@ class HotelScreen extends Component {
             direction="up"
             containerStyle={{}}
             style={{ backgroundColor: "#5067FF" }}
-            position="bottomRight" onPress={()=> this.props.navigation.navigate('addHotel')}
+            position="bottomRight"
+            onPress={() => this.props.navigation.navigate("addHotel")}
           >
             <IconNB name="md-add" />
           </Fab>
         </View>
-
       </Container>
     );
   }
-   _logout = async() =>{
-     await AsyncStorage.clear();
-     this.props.navigation.navigate('Auth');
-   }
+  _logout = async () => {
+    await AsyncStorage.clear();
+    this.props.navigation.navigate("Auth");
+  };
 }
 
 const styles = StyleSheet.create({
@@ -79,11 +100,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFF"
   },
   icon: {
-      width: 24,
-      height: 24,
-    },
+    width: 24,
+    height: 24
+  }
 });
 
-
 export default HotelScreen;
-

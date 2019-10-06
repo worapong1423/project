@@ -6,25 +6,34 @@ import {
         View
        } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
-import {Container,Header,Content,Item,Button,Input,Text} from "native-base";
+import {Container,Header,Content,Item,Button,Input,Text,Root} from "native-base";
 import {  createAppContainer,createSwitchNavigator,} from 'react-navigation';
 import { createDrawerNavigator } from 'react-navigation-drawer';
 import { createStackNavigator } from 'react-navigation-stack';
-import HotelScreen from './Screen/HotelScreen';
-import ProfileScreen from './Screen/ProfileScreen';
-import LoginScreen from './Screen/LoginScreen';
-import AddHotel from './Screen/AddHotel';
-import Order from './Screen/Order';
-import EditedRate from './Screen/EditedRate';
-import TabOrderList from'./Screen/TabOrderList';
-import AddListScreen from './Screen/AddListScreen';
+import HotelScreen from './src/Screen/HotelScreen';
+import ProfileScreen from './src/Screen/ProfileScreen';
+import LoginScreen from './src/Screen/LoginScreen';
+import AddHotel from './src/Screen/AddHotel';
+import Order from './src/Screen/Order';
+import EditedRate from './src/Screen/EditedRate';
+import TabOrderList from'./src/Screen/TabOrderList';
+import AddListScreen from './src/Screen/AddListScreen';
+import SignatureScreen from './src/Screen/SignatureScreen';
+import AuthLoadingScreen from './src/Screen/AuthLoadingScreen'
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import ReduxThunk from 'redux-thunk';
+import reducers from './src/reducers';
+import Router from './src/Router';
 
 
-const AppStack = createStackNavigator({
+
+/*const AppStack = createStackNavigator({
     Home : HotelScreen,
     AddList : AddListScreen,
     addHotel : AddHotel,
     EditedRate  : EditedRate ,
+    Signature : SignatureScreen,
     },{initialRouteName:'Home',
     }
 
@@ -55,38 +64,7 @@ const AppDrawer = createDrawerNavigator(
 );
 const AuthStack = createStackNavigator({Login : LoginScreen});
 
-class AuthLoadingScreen extends Component{
-  /*constructor(props) {
-    super(props);
-    this._loadData();
-  }*/
-  componentDidMount() {
-    this._loadData();
-  }
-    
-  
-  render(){
-    return(
-      <View style={styles.container}>
-        <ActivityIndicator/>
-        <StatusBar barStyle="default"/>
-      </View>
-    );
-  }
 
-  _loadData = async() =>{
-    const isLoggedIn = await AsyncStorage.getItem('isLoggedIn');
-    this.props.navigation.navigate(isLoggedIn !== '1'? 'Auth' : 'App');
-  }
-}
-
-const styles =StyleSheet.create({
-  container:{
-    flex:1,
-    justifyContent:'center',
-    alignItems:'center',
-  }
-})
 
 //const AppContainer = createAppContainer(AppNavigator);
 
@@ -94,7 +72,7 @@ const styles =StyleSheet.create({
   render() {
     return <AppContainer />;
   }
-}*/
+}
 export default createAppContainer(
   createSwitchNavigator(
     {
@@ -107,5 +85,19 @@ export default createAppContainer(
       initialRouteName: 'AuthLoading',
     }
   )
-);
+);*/
 
+class App extends Component {
+  render() {
+    const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
+    return (
+      <Provider store={store}>
+      	<Root>
+          <Router />
+        </Root>
+      </Provider>
+    );
+  }
+}
+
+export default App;
