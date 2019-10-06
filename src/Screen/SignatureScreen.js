@@ -19,7 +19,7 @@ export default class SignatureScreen extends React.Component {
   render() {
     const style = `.m-signature-pad--footer
     .button {
-      background-color: red;
+      background-color: #3F51B5;
       color: #FFF;
     }`;
     return (
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     lineHeight: 40,
     paddingLeft: 10,
     paddingRight: 10,
-    backgroundColor: "#69B2FF",
+    backgroundColor: "#3F51B5",
     width: 120,
     textAlign: "center",
     marginTop: 10
