@@ -13,7 +13,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 import HotelScreen from './src/Screen/HotelScreen';
 import ProfileScreen from './src/Screen/ProfileScreen';
 import LoginScreen from './src/Screen/LoginScreen';
-import AddHotel from './src/Screen/AddHotel';
+import AddHotelScreen from './src/Screen/AddHotelScreen';
 import Order from './src/Screen/Order';
 import EditedRate from './src/Screen/EditedRate';
 import TabOrderList from'./src/Screen/TabOrderList';
@@ -33,11 +33,35 @@ import Router from './src/Router';
     AddList : AddListScreen,
     addHotel : AddHotel,
     EditedRate  : EditedRate ,
-    Signature : SignatureScreen,
+
     },{initialRouteName:'Home',
     }
 
     );
+
+const AppStack = createStackNavigator({
+    Home : HotelScreen,
+    AddList : AddListScreen,
+    EditedRate  : EditedRate ,
+    Order : Order,
+    Profile : ProfileScreen,
+    addHotel : AddHotel,
+    EditedRate  : EditedRate ,
+    Signature : SignatureScreen,
+    },
+    {
+    defaultNavigationOptions: {
+        headerStyle: {
+        backgroundColor: '#3F51B5',
+     },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+            fontWeight: 'bold',
+        },
+   }
+ }
+ );
+
 
 const AppDrawer = createDrawerNavigator(
   {

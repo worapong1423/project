@@ -49,27 +49,13 @@ class TabOrderRate extends Component {
           </List>
         </Content>
 
-        <View style={{ flex: 1 }}>
-          <Fab
-            active={this.state.active}
-            direction="up"
-            containerStyle={{}}
-            style={{ backgroundColor: "#5067FF" }}
-            position="bottomRight" onPress={() => this.props.navigation.navigate('')}
-
-          >
-            <IconNB name="md-add" />
-            <Button style={{ backgroundColor: "#34A34F" }}>
-              <IconNB name="logo-whatsapp" />
-            </Button>
-            <Button style={{ backgroundColor: "#3B5998" }}>
-              <IconNB name="logo-facebook" />
-            </Button>
-            <Button disabled style={{ backgroundColor: "#DD5144" }}>
-              <IconNB name="ios-mail" />
-            </Button>
-          </Fab>
-        </View>
+        <Footer>
+            <FooterTab>
+                <Button full onPress={() => this.props.navigation.setParams('AddList') }>
+                    <Text>เพิ่มรายการ</Text>
+                </Button>
+            </FooterTab>
+        </Footer>
 
       </Container>
     );

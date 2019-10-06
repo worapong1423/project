@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { StyleSheet } from 'react-native'
-import {Container,Header,Title,Content,Button,Icon,List,ListItem,Text,Left,Right,Body,View,Fab,IconNB} from "native-base";
+import {Container,Header,Title,Content,Button,Icon,List,ListItem,Text,Left,Right,Body,View,Fab,IconNB,Footer,FooterTab} from "native-base";
 import { createStackNavigator } from 'react-navigation-stack';
 
 
@@ -58,17 +58,13 @@ static navigationOptions = {
           </List>
         </Content>
 
-        <View style={{ flex: 1 }}>
-          <Fab
-            active={this.state.active}
-            direction="up"
-            containerStyle={{}}
-            style={{ backgroundColor: "#5067FF" }}
-            position="bottomRight"
-            onPress={() => this.props.navigation.navigate('AddList') }>
-            <IconNB name="md-add" />
-          </Fab>
-        </View>
+        <Footer>
+            <FooterTab>
+                <Button full onPress={() => this.props.navigation.setParams('AddList') }>
+                    <Text>เพิ่มรายการ</Text>
+                </Button>
+            </FooterTab>
+        </Footer>
 
       </Container>
     );

@@ -27,16 +27,26 @@ const datas = [
 ];
 
 class HotelScreen extends Component {
-  static navigationOptions = {
-    //title :'โรงแรม',
-    drawerLabel: "Home"
-    /*drawerIcon: ({ tintColor }) => (
-        <Image
-          source={require('./chats-icon.png')}
-          style={[styles.icon, { tintColor: tintColor }]}
-        />
-      ),*/
-  };
+      static navigationOptions = {
+         headerTitle: 'โรงแรม',
+         headerLeft: (
+           <Button  onPress={() =>this.props.navigation.dispatch(DrawerActions.openDrawer())}>
+               <Text>Drawer</Text>
+           </Button>
+         ),
+
+         /*headerLeft: (
+         <Image style={{ width: 28, height: 28, marginLeft: 5 }} source={require('../Image/drawer.png')} onPress={() =>this.props.navigation.dispatch(DrawerActions.openDrawer())}/>
+         ),*/
+         /*drawerLabel: 'โรงแรม',
+         drawerIcon: ({ tintColor }) => (
+           <Image
+             source={require('./chats-icon.png')}
+             style={[styles.icon, { tintColor: tintColor }]}
+           />
+         ),*/
+       };
+
 
   constructor(props) {
     super(props);
@@ -81,7 +91,7 @@ class HotelScreen extends Component {
             containerStyle={{}}
             style={{ backgroundColor: "#5067FF" }}
             position="bottomRight"
-            onPress={() => this.props.navigation.navigate("addHotel")}
+            onPress={() => this.props.navigation.navigate("AddHotelScreen")}
           >
             <IconNB name="md-add" />
           </Fab>

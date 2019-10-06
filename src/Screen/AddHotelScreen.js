@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { StyleSheet } from 'react-native'
 import {Container,Header,Title,Content,Button,Icon,Body,Left,Right,Item,Input,Form,Text} from "native-base";
 
-class AddHotel extends Component {
+class AddHotelScreen extends Component {
 
   static navigationOptions = ({navigation})=>{
     let headerTitle = 'เพิ่มโรงแรม';
@@ -54,4 +54,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default AddHotel;
+export default AddHotelScreen;

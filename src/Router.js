@@ -13,7 +13,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 import HotelScreen from './Screen/HotelScreen';
 import ProfileScreen from './Screen/ProfileScreen';
 import LoginScreen from './Screen/LoginScreen';
-import AddHotel from './Screen/AddHotel';
+import AddHotelScreen from './Screen/AddHotelScreen';
 import Order from './Screen/Order';
 import EditedRate from './Screen/EditedRate';
 import TabOrderList from'./Screen/TabOrderList';
@@ -26,24 +26,33 @@ import AuthLoadingScreen from './Screen/AuthLoadingScreen'
 const AppStack = createStackNavigator({
     Home : HotelScreen,
     AddList : AddListScreen,
-    addHotel : AddHotel,
     EditedRate  : EditedRate ,
-    Signature : SignatureScreen,
-    },{initialRouteName:'Home',
-    }
-
-    );
+    Order : Order,
+    Profile : ProfileScreen,
+    AddHotelScreen : AddHotelScreen,
+    EditedRate  : EditedRate ,
+    },
+    {initialRouteName:'Home',
+    },
+    {
+    defaultNavigationOptions: {
+        headerStyle: {
+        backgroundColor: '#3F51B5',
+     },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+            fontWeight: 'bold',
+        },
+   }
+ }
+ );
 
 const AppDrawer = createDrawerNavigator(
   {
     //Login : LoginScreen,
     Home : HotelScreen,
-    Profile : ProfileScreen,
-
-    Order : Order,
-
-
-},
+    EditedRate  : EditedRate ,
+   },
 {
   //initialRouteName:'Home',
   defaultNavigationOptions: {
@@ -57,6 +66,8 @@ const AppDrawer = createDrawerNavigator(
   }
 }
 );
+const MyApp = createAppContainer(AppDrawer);
+
 const AuthStack = createStackNavigator({Login : LoginScreen});
 
 export default createAppContainer(
