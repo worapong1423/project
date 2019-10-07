@@ -9,7 +9,7 @@ export default class SignatureScreen extends React.Component {
           headerTitle : 'รับออเดอร์',
           headerRight : (
             <Button title="บันทึก"
-              onPress={()=> this.props.navigation.navigate('Home')}
+              onPress={()=> this.props.navigation.navigate('StatusTwosScreen')}
               color="#3F51B5"
             />
           ),

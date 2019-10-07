@@ -4,14 +4,15 @@ import {Container,Header,Title,Content,Button,Icon,List,ListItem,Text,Left,Right
 
 
 const datas = [
-  "Simon Mignolet",
-  "Nathaniel Clyne",
-  "Dejan Lovren",
-  "Mama Sakho",
-  "Alberto Moreno",
-  "Emre Can",
-  "Joe Allen",
-  "Phil Coutinho"
+  "โรงเเรม : อินเตอร์เนชั่นแนลเฮาล์",
+  "ที่อยู่ : 999 หมู่99 ซอย99 ถนนก้าวหน้า",
+  "ตำบล : แม่กา",
+  "อำเภอ : เมือง ",
+  "จังหวัด : เชียงราย",
+  "รหัสไปรษณีย์ : 56000",
+  "เบอร์ติดต่อ : 999-9999",
+  "อีเมล์ :  inter002562@gmail.com",
+  "เลขประจำตัวผู้เสียภาษี : 2401295847395"
 ];
 
 class TabOrderDetail extends Component {

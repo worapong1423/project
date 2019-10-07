@@ -4,7 +4,7 @@ import {Container,Header,Title,Content,Button,Icon,List,ListItem,Text,Left,Right
 import { createStackNavigator } from 'react-navigation-stack';
 
 
-const datas = [
+const data = [
   {
     text: "HT0001",
     status: "สถานะ : เสร็จสิ้น",
@@ -40,7 +40,7 @@ static navigationOptions = {
 
         <Content>
           <List>
-            {datas.map((data, i) => (
+            {data.map((data, i) => (
               <ListItem>
                 <Left>
                   <Text>{data.text}</Text>
@@ -60,7 +60,7 @@ static navigationOptions = {
 
         <Footer>
             <FooterTab>
-                <Button full onPress={() => this.props.navigation.setParams('AddList') }>
+                <Button full onPress={() => this.props.navigation.setParams('StatusOneScreen') }>
                     <Text>เพิ่มรายการ</Text>
                 </Button>
             </FooterTab>

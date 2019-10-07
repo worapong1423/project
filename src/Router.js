@@ -17,7 +17,8 @@ import AddHotelScreen from './Screen/AddHotelScreen';
 import Order from './Screen/Order';
 import EditedRate from './Screen/EditedRate';
 import TabOrderList from'./Screen/TabOrderList';
-import AddListScreen from './Screen/AddListScreen';
+import StatusOneScreen from './Screen/StatusOneScreen';
+import StatusTwosScreen from './Screen/StatusTwosScreen';
 import SignatureScreen from './Screen/SignatureScreen';
 import AuthLoadingScreen from './Screen/AuthLoadingScreen'
 
@@ -27,15 +28,15 @@ const AppStack = createStackNavigator({
     Home : HotelScreen,
     AddHotelScreen : AddHotelScreen,
     Order : Order,
-    AddList : AddListScreen,
+    StatusOneScreen : StatusOneScreen,
     Signature : SignatureScreen,
     EditedRate  : EditedRate ,
     Profile : ProfileScreen,
     EditedRate  : EditedRate ,
+    StatusTwosScreen : StatusTwosScreen,
 
     },
-    {initialRouteName:'Home',
-    },
+
     {
     defaultNavigationOptions: {
         headerStyle: {
@@ -55,19 +56,20 @@ const AppDrawer = createDrawerNavigator(
     //Login : LoginScreen,
     Home : HotelScreen,
     EditedRate  : EditedRate ,
-    AddList : AddListScreen,
+    StatusOneScreen : StatusOneScreen,
+    StatusTwosScreen : StatusTwosScreen,
    },
-{
-  //initialRouteName:'Home',
-  defaultNavigationOptions: {
-    headerStyle: {
-      backgroundColor: '#3F51B5',
-    },
-    headerTintColor: '#fff',
-    headerTitleStyle: {
-      fontWeight: 'bold',
-    },
-  }
+    //initialRouteName:'Home',
+    {
+    defaultNavigationOptions: {
+        headerStyle: {
+            backgroundColor: '#3F51B5',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+            fontWeight: 'bold',
+        },
+   }
 }
 );
 const MyApp = createAppContainer(AppDrawer);

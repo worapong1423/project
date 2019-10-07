@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import { StyleSheet } from 'react-native'
 import {Container,Header,Title,Content,Button,Icon,List,ListItem,Text,Left,Right,Body,View,Fab,IconNB,Footer,FooterTab} from "native-base";
 
-const datas = [
-      {
-        list: "ผ้าปูที่นอน 3.5 ฟุต",
-        rate: "10",
-      },
+const data = [
+  {
+    list: "ผ้าปูที่นอน 3.5 ฟุต",
+    rate: "10",
+  },
   {
     list: "ผ้าปูที่นอน 5-6 ฟุต",
     rate: "12",
@@ -20,6 +20,8 @@ const datas = [
     rate: "25",
   },
 ];
+
+
 
 class TabOrderRate extends Component {
 
@@ -36,7 +38,7 @@ class TabOrderRate extends Component {
 
         <Content>
           <List>
-            {datas.map((data, i) => (
+            {data.map((data, i) => (
               <ListItem>
                 <Left>
                   <Text>{data.list} เรท : {data.rate}</Text>

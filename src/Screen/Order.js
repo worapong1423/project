@@ -4,7 +4,7 @@ import {Container,Header,Title,Button,Icon,Tabs,Tab,Right,Left,Body} from "nativ
 import TabOrderList from './TabOrderList';
 import TabOrderRate from './TabOrderRate';
 import TabOrderDetail from './TabOrderDetail';
-import AddListScreen from './AddListScreen';
+import StatusOneScreen from './StatusOneScreen';
 import { createDrawerNavigator } from 'react-navigation-drawer';
 
 export default class Order extends Component {

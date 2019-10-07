@@ -40,7 +40,7 @@ class EditedRate extends React.Component {
             <Item rounded>
                 <Input placeholder="ราคา/ชิ้น" />
             </Item>
-            <Button block onPress={()=> this.props.navigation.navigate('TabOrderRate')}>
+            <Button block onPress={()=> this.props.navigation.navigate('Order')}>
                 <Text>บันทึก</Text></Button>
           </Form>
         </Content>

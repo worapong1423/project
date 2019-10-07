@@ -20,7 +20,7 @@ import {
 } from "native-base";
 import {  createAppContainer,createSwitchNavigator,} from 'react-navigation';
 import { createDrawerNavigator } from "react-navigation-drawer";
-const datas = [
+const data = [
   "โรงเเรม อินเตอร์เนชั่นแนลเฮาล์",
   "โรงเเรม วีพี",
   "โรงเเรม เอ็มพลัส",
@@ -62,7 +62,7 @@ class HotelScreen extends Component {
       <Container style={styles.container}>
         <Content>
           <List>
-            {datas.map((data, i) => (
+            {data.map((data, i) => (
               <ListItem onPress={() => this.props.navigation.navigate("Order")}>
                 <Left>
                   <Text>{data}</Text>

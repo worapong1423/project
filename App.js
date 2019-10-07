@@ -17,7 +17,8 @@ import AddHotelScreen from './src/Screen/AddHotelScreen';
 import Order from './src/Screen/Order';
 import EditedRate from './src/Screen/EditedRate';
 import TabOrderList from'./src/Screen/TabOrderList';
-import AddListScreen from './src/Screen/AddListScreen';
+import StatusOneScreen from './src/Screen/StatusOneScreen';
+import StatusTwosScreen from './src/Screen/StatusTwosScreen';
 import SignatureScreen from './src/Screen/SignatureScreen';
 import AuthLoadingScreen from './src/Screen/AuthLoadingScreen'
 import { Provider } from 'react-redux';

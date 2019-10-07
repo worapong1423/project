@@ -32,11 +32,12 @@ const data = [
     date : "01/02/2562"
   }];
 
-export class AddListScreen extends React.Component {
+export class StatusOneScreen extends React.Component {
     static navigationOptions = ({navigation})=> {
         let headerTitle = 'รับออเดอร์';
         return {headerTitle}
         };
+
     render() {
         return (
         <Container>
@@ -67,15 +68,14 @@ export class AddListScreen extends React.Component {
                         </Item>
                       </Body>
                     </CardItem>
-                    <CardItem footer>
-                      <Button onPress={() => this.props.navigation.navigate('Signature')}>
+                    <Button block onPress={() => this.props.navigation.navigate('Signature')}>
                         <Text>ขั้นตอนต่อไป</Text>
-                      </Button>
-                    </CardItem>
+                    </Button>
+
                 </Card>
             </Content>
         </Container>
         )
     }
 }
-export default AddListScreen;
+export default StatusOneScreen;
